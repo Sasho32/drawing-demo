@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polygons</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Nunito:ital,wght@1,1000&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://static.vecteezy.com/system/resources/previews/022/448/543/original/illustration-of-colorful-pencil-with-eraser-free-png.png">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- <h1>Polygons local test:</h1> -->
+    <button id="delete-line">Delete selected line</button>
+    <button class="right" id="log-lines">Show points</button>
+    <label class="left">
+        <input type="checkbox" id="drawing-mode-checkbox"> Drawing Mode
+    </label>
+    <button class="left" id="start-line-btn">Start a new line</button>
+    <input class="left" type="color" id="color-picker" name="color-picker" value="#000000" />
+    <hr>
+    <section id="map"></section>
+    <hr>
+    <dialog>
+        <span>Are you sure you want to delete the selected line?</span>
+        <div>
+            <span>yes</span>
+            <span>no</span>
+        </div>
+    </dialog>
+    <!-- <script src="./index.js"></script> -->
+    <script src="./minified.js"></script>r
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4vGkrnNHnn4S5-xX_BnDNzXPgRaDw2Ew&libraries=geometry&callback=initMap"></script>
+</body>
+</html>

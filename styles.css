@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lora', serif;
+}
+
+body {
+  /* background-color: hsl(32, 100%, 68%); */
+  background: #43cea2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #43cea2, #185a9d); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #43cea2, #185a9d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background-image: url('https://i.pinimg.com/originals/be/ce/1e/bece1e65f2c81678c1af359e6d5d4ac2.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+body > h1 {
+  color: #fff;
+}
+
+body > hr {
+  width: 100%;
+}
+
+body > section#map {
+  height: 70vh;
+  width: clamp(200px, 100%, 2200px);
+  border-radius: 1rem;
+  box-shadow: 10px 12px 38px 13px rgba(0, 0, 0, 0.88);
+  -webkit-box-shadow: 10px 12px 38px 13px rgba(0, 0, 0, 0.88);
+  -moz-box-shadow: 10px 12px 38px 13px rgba(0, 0, 0, 0.88);
+}
+
+body > label {
+  /* color: #fff; */
+}
+
+body > label:hover,
+body > label > input:hover {
+  cursor: pointer;
+}
+
+body > label > input:checked {
+  margin-inline-end: 0.5rem;
+  scale: 2;
+}
+
+body > label:has(input:checked) {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+body > button#start-line-btn {
+  background-color: hsl(0, 0%, 40%);
+  color: #fff;
+  padding: 1rem;
+  outline: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  display: none;
+}
+
+body > button#start-line-btn:hover {
+  cursor: pointer;
+}
+
+body > label:has(input:checked) + button#start-line-btn {
+  display: block;
+}
+
+body > input[type='color'] {
+  display: none;
+}
+
+body > label:has(input:checked) ~ input[type='color'] {
+  display: block;
+}
+
+/* hr:last-of-type {
+    margin-block-end: 3rem;
+} */
+
+body {
+  margin-block: 3rem;
+}
+
+body:has(input:checked) {
+  cursor: crosshair;
+}
+
+body > button#log-lines {
+  padding: 1rem;
+  border-radius: 1rem;
+  outline: none;
+  border: 3px solid #fff;
+  /* background-color: rgb(40, 40, 241); */
+  background-color: #43cea2;
+  /* color: #fff; */
+  font-weight: bold;
+}
+body > button#log-lines:hover {
+  cursor: pointer;
+}
+
+.left {
+  align-self: flex-start;
+}
+.right {
+  align-self: flex-end;
+}
+
+body {
+  box-sizing: border-box;
+  padding-inline: 2rem;
+}
+
+dialog {
+  position: fixed;
+  width: clamp(200px, 50vw, 500px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  border-radius: 1rem;
+  box-shadow: -13px 13px 17px 7px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -13px 13px 17px 7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -13px 13px 17px 7px rgba(0, 0, 0, 0.75);
+  padding: 2rem;
+}
+
+dialog > * {
+  margin-block: 2rem;
+}
+
+dialog > span {
+  color: #fff;
+  text-align: center;
+  display: block;
+  font-size: 1.5rem;
+}
+
+dialog > div {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+}
+
+dialog > div > span {
+  background-color: greenyellow;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  grid-area: 1 / 3 / 2 / 5;
+  text-align: center;
+  transition: transform 300ms;
+}
+
+dialog > div > span:last-child {
+  color: #fff;
+  background-color: red;
+  grid-area: 1 / 6 / 2 / 8;
+}
+
+dialog > div > span:hover {
+  cursor: pointer;
+  font-weight: bold;
+  transform: scale(1.2);
+}
+
+body > button#delete-line {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  background-color: rgb(241, 40, 40);
+  color: #fff;
+  font-weight: bold;
+  display: none;
+}
+
+body.selected-line > button#delete-line {
+  display: block;
+}
+
+body > button#delete-line:hover {
+  cursor: pointer;
+}
+
+body.modal-opened {
+  background-color: #ad2f26;
+  background-image: linear-gradient(147deg, #ad2f26 0%, #99201c 74%);
+}
+
+body.modal-opened > button#delete-line {
+  background-color: #fff;
+  color: red;
+}
+
+
+@media screen and (max-width: 40em) {
+    dialog > div > span {
+        grid-area: 1 / 2 / 2 / 5;
+      }
+      
+      dialog > div > span:last-child {
+        grid-area: 1 / 6 / 2 / 9;
+      }
+      
+}
